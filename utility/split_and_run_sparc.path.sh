@@ -29,11 +29,11 @@ if [ ! -d $split_dir ]; then mkdir $splitdir ; else  rm ${split_dir}/backbone-* 
 
 
 if [ $splitversion -eq 1 ]; then
- split_reads_by_backbone.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
+ ./split_reads_by_backbone.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
 elif [ $splitversion -eq 2 ]; then
- split_reads_by_backbone_readdict.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
+ ./split_reads_by_backbone_readdict.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
 elif [ $splitversion -eq 3 ]; then
- split_reads_by_backbone_openclose.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
+ ./split_reads_by_backbone_openclose.py -b ${backbone_fasta} -o ${split_dir} -r ${reads_fasta} -c ${consensus_fasta} 
 else
  echo "splitversion (argument #6) needs to be 1, 2, or 3. If left blank, default is 1."
  exit
